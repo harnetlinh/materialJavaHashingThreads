@@ -1,4 +1,5 @@
 
+import java.math.BigInteger;
 import java.security.MessageDigest;
 
 class HashingWorker {
@@ -100,12 +101,23 @@ public class Demo {
  */
 class Flag {
     Boolean isStop = false;
+    Integer starttime = 0;
+    Integer endtime = 0;
+
+    public Flag(){
+        starttime = (int) System.nanoTime();
+    }
     
     public void setDone(){
         isStop = true;
+        endtime = (int) System.nanoTime();
     }
 
     public Boolean isDone(){
         return isStop;
+    }
+
+    public Integer getDuration(){
+        return endtime - starttime;
     }
 }
