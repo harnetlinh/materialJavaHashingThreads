@@ -118,6 +118,6 @@ class Flag {
     }
 
     public Integer getDuration(){
-        return endtime - starttime;
+        return Math.abs(endtime - starttime);
     }
 }
