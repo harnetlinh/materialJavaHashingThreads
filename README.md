@@ -10,6 +10,8 @@ Chú ý:
 - Chuỗi ký tự có thể có các ký tự trùng lặp.
 - Phải sử dụng thread trong Java để xử lý đề bài (phải có tối thiểu 3 threads)
 
+<hr/>
+
 <h2> Lab 2: Sử dụng AsyncTask và Handler tìm chuỗi ký tự input của hàm hashing </h2>
 ```string
 a918c858d2dd1a3c69163267468804bdcd67daf50de8899183efe63e8412438a
