@@ -13,6 +13,7 @@ Chú ý:
 <hr/>
 
 <h2> Lab 2: Sử dụng AsyncTask và Handler tìm chuỗi ký tự input của hàm hashing </h2>
+
 ```string
 a918c858d2dd1a3c69163267468804bdcd67daf50de8899183efe63e8412438a
 ```
