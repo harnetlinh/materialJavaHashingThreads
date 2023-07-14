@@ -1,4 +1,4 @@
-package com.example.lab3;
+package com.example.lab3demo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,121 +20,117 @@ import java.nio.charset.StandardCharsets;
 public class MainActivity extends AppCompatActivity {
 
     TextView resultText;
-    //
-    private static final String GET_URL = "http://10.82.1.4:3000/get-quote";
+    private static final String GET_URL = "http://103.118.28.46:3000/get-quote";
 
-    private static final String POST_URL = "http://10.82.1.4:3000/add-quote";
+    private static final String POST_URL = "http://103.118.28.46:3000/add-quote";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        resultText = findViewById(R.id.result);
+        resultText = findViewById(R.id.textQuote);
     }
-
-    private void sendGetHttpURLConnection() throws  Exception{
+    // sử dụng phương thức get để lấy dữ liệu
+    private void sendGetHttpUrlConnection() throws Exception{
         URL url = new URL(GET_URL);
-        HttpURLConnection con = (HttpURLConnection) url.openConnection();
-        con.setRequestMethod("GET");
-        con.setRequestProperty("Content-Type", "application/json");
-        con.setRequestProperty("Accept", "application/json");
-        int responseCode = con.getResponseCode();
+        // mở giao thức Http
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        // phương thức sử dụng là GET
+        conn.setRequestMethod("GET");
+        // config request
+        conn.setRequestProperty("Content-Type", "application/json");
+        conn.setRequestProperty("Accept", "application/json");
+
+        int responseCode = conn.getResponseCode();
+
         if (responseCode == HttpURLConnection.HTTP_OK){
-            InputStream responseBody = con.getInputStream();
+            // xử lý dữ liệu trả về
+            InputStream responseBody = conn.getInputStream();
             InputStreamReader responseBodyReader = new InputStreamReader(responseBody, "UTF-8");
+
+            // Xử lý Json trong java
             JsonReader jsonReader = new JsonReader(responseBodyReader);
-            jsonReader.beginObject(); // Start processing the JSON object
-            resultText.setText(getValue("quote", jsonReader));
+            jsonReader.beginObject();
+            String quote = getValue("quote", jsonReader);
+            resultText.setText(quote);
+
         } else {
-            System.out.println("ERROR");
+            // TODO: Xử lý kết quả trả về là lỗi
         }
-        con.disconnect();
     }
 
-    // send POST request
+    //send POST request
     private void sendPostHttpURLConnection() throws Exception{
         URL url = new URL(POST_URL);
-        HttpURLConnection con = (HttpURLConnection) url.openConnection();
-        con.setRequestMethod("POST");
-        con.setRequestProperty("Content-Type", "application/json");
-        con.setRequestProperty("Accept", "application/json");
+        // mở giao thức Http
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        // phương thức sử dụng là GET
+        conn.setRequestMethod("POST");
+        // config request
+        conn.setRequestProperty("Content-Type", "application/json");
+        conn.setRequestProperty("Accept", "application/json");
 
-        con.setDoOutput(true);
+        conn.setDoOutput(true);
+
+        // set data body
         JSONObject data = new JSONObject();
-        data.put("name", "Linh");
+        // set key value
+        data.put("name", "Ha Ngoc Linh");
 
-
+        // đưa data object json vào request post
         byte[] postData = data.toString().getBytes(StandardCharsets.UTF_8);
-        try (OutputStream outputStream = con.getOutputStream()) {
+        try (OutputStream outputStream = conn.getOutputStream()){
             outputStream.write(postData);
         }
 
-        int responseCode = con.getResponseCode();
+        int responseCode = conn.getResponseCode();
+
         if (responseCode == HttpURLConnection.HTTP_OK){
-            InputStream responseBody = con.getInputStream();
+            // xử lý dữ liệu trả về
+            InputStream responseBody = conn.getInputStream();
             InputStreamReader responseBodyReader = new InputStreamReader(responseBody, "UTF-8");
+
+            // Xử lý Json trong java
             JsonReader jsonReader = new JsonReader(responseBodyReader);
-            jsonReader.beginObject(); // Start processing the JSON object
-            resultText.setText(getValue("message", jsonReader));
+            jsonReader.beginObject();
+            String quote = getValue("message", jsonReader);
+            resultText.setText(quote);
+
         } else {
-            System.out.println("ERROR");
+            // TODO: Xử lý kết quả trả về là lỗi
         }
-        con.disconnect();
     }
 
-    // function to get value of input key from JSON object
+    // TODO: tạo get request http://103.118.28.46:3000/get-list-quote trả về array (phải sử dụng JsonArray)
+    // in ra màn hình (chú ý về độ trễ trả về)
+
+    // function get và xử lý dữ liệu tra về
     private String getValue(String key, JsonReader jsonReader) throws Exception{
         String value = "";
-        while (jsonReader.hasNext()) { // Loop through all keys
-            String k = jsonReader.nextName(); // Fetch the next key
-            if (k.equals(key)) { // Check if desired key
-                // Fetch the value as a String
-                value = jsonReader.nextString();
-                break; // Break out of the loop
+        while (jsonReader.hasNext()){ //đọc json cho đến heets thì thôi
+            String k = jsonReader.nextName();
+            if (k.equals(key)){ // nếu key trong data là key đang tìm kiếm
+                value = jsonReader.nextString(); // lấy giá trị
+                break;
             } else {
-                jsonReader.skipValue(); // Skip values of other keys
+                jsonReader.skipValue();
             }
         }
         return value;
     }
 
-    private void sendGetRetrofit() throws Exception{
-
-    }
-
-    private void sendPostRetrofit() throws Exception{
-
-    }
-
-    // function send GET request with Retrofit library
-    public void onClickSendGetRetrofit(View view) {
+    public void onClickSendGetHttpUrlConnection(View view){
         try {
-            sendGetRetrofit();
+            sendGetHttpUrlConnection();
         }catch (Exception e){
             e.printStackTrace();
         }
     }
 
-    // function send POST request with Retrofit library
-    public void onClickSendPostRetrofit(View view) {
-        try {
-            sendPostRetrofit();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    public void onClickSendGetHttpURLConnection(View view) {
-        try {
-            sendGetHttpURLConnection();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    public void onClickSendPostHttpURLConnection(View view) {
+    public void onClickSendPostHttpUrlConnection(View view){
         try {
             sendPostHttpURLConnection();
         }catch (Exception e){
