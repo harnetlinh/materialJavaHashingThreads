@@ -10,6 +10,10 @@ Chú ý:
 - Chuỗi ký tự có thể có các ký tự trùng lặp.
 - Phải sử dụng thread trong Java để xử lý đề bài (phải có tối thiểu 3 threads)
 
+<h2> Lab 1 (Alternative): Tính tổng toàn bộ các số nguyên tố từ 1 -> 1,000,000  </h2>
+Chú ý:
+- Phải sử dụng thread trong Java để xử lý đề bài (phải có tối thiểu 3 threads)
+
 <hr/>
 
 <h2> Lab 2: Sử dụng AsyncTask và Handler tìm chuỗi ký tự input của hàm hashing </h2>
