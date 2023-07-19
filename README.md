@@ -30,4 +30,8 @@ a918c858d2dd1a3c69163267468804bdcd67daf50de8899183efe63e8412438a
 
 <h2> Lab 4: Sử dụng Demo bài hackingNasaServer, hoàn thành các phần TODO </h2>
 
+<hr/>
+
+<h2>Assignment Part 1: https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2023-07-01 </h2>
+
  
