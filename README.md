@@ -39,6 +39,7 @@ a918c858d2dd1a3c69163267468804bdcd67daf50de8899183efe63e8412438a
 <b> Chú ý </b>:
 - Phải sử dụng đa luồng để get image, tạo base64 và gửi post request lưu ảnh vào server api Nodejs.
 - Khuyến khích sử dụng Retrofit để thực hiện post request và executor để thực hiện đa luồng.
+- Có thể đăng ký api key tại https://api.nasa.gov/ để sử dụng api của NASA.
 
 <hr/>
  
