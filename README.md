@@ -32,7 +32,7 @@ a918c858d2dd1a3c69163267468804bdcd67daf50de8899183efe63e8412438a
 
 <hr/>
 
-<h2>Assignment: Kết hợp tất cả các bài lab và thực hiện nhiệm vụ như mô hình dưới </h2>
+<h2>Assignment Part1: Kết hợp tất cả các bài lab và thực hiện nhiệm vụ như mô hình dưới </h2>
 
 <img src="./AssignmentHelper/AssignmentDiagram.png" alt="Assignment Diagram" width="100%"/>
 
@@ -42,4 +42,6 @@ a918c858d2dd1a3c69163267468804bdcd67daf50de8899183efe63e8412438a
 - Có thể đăng ký api key tại https://api.nasa.gov/ để sử dụng api của NASA.
 
 <hr/>
+
+<h2>Lab 5: Sử dụng code mẫu JavaSocketExample để triển khai 2 app android java gửi message cho nhau </h2>
  
