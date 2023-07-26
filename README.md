@@ -45,3 +45,8 @@ a918c858d2dd1a3c69163267468804bdcd67daf50de8899183efe63e8412438a
 
 <h2>Lab 5: Sử dụng code mẫu JavaSocketExample để triển khai 2 app android java gửi message cho nhau </h2>
  
+<hr/>
+
+<h2>Lab 6: Sử dụng firebase để phát triển tính năng đăng nhập </h2>
+Tài liệu tham khảo tại <a href="https://viblo.asia/p/su-dung-firebase-trong-viec-dang-nhap-va-xac-thuc-dang-ky-thanh-vien-MLzGOxlLepq">ĐÂY</a>
+ 
