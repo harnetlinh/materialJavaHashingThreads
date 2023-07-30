@@ -50,3 +50,4 @@ a918c858d2dd1a3c69163267468804bdcd67daf50de8899183efe63e8412438a
 <h2>Lab 6: Sử dụng firebase để phát triển tính năng đăng nhập </h2>
 Tài liệu tham khảo tại <a href="https://viblo.asia/p/su-dung-firebase-trong-viec-dang-nhap-va-xac-thuc-dang-ky-thanh-vien-MLzGOxlLepq">ĐÂY</a>
  
+<h2>Lab 7: Tạo 2 ứng dụng android và sử dụng socket gửi thông từ app A sang app B, app B hiển thị thông báo dạng popup (toast,... ) </h2>
