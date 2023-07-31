@@ -51,3 +51,13 @@ a918c858d2dd1a3c69163267468804bdcd67daf50de8899183efe63e8412438a
 Tài liệu tham khảo tại <a href="https://viblo.asia/p/su-dung-firebase-trong-viec-dang-nhap-va-xac-thuc-dang-ky-thanh-vien-MLzGOxlLepq">ĐÂY</a>
  
 <h2>Lab 7: Tạo 2 ứng dụng android và sử dụng socket gửi thông từ app A sang app B, app B hiển thị thông báo dạng popup (toast,... ) </h2>
+
+<h2>Assignment GĐ2: Hoàn thiện ứng dụng kéo dữ liệu Nasa theo mô hình <a href="./AssignmentHelper/assignmentGD2.jpg"> NÀY </a> </h2>
+
+<img src="./AssignmentHelper/assignmentGD2.jpg" alt="Assignment Diagram" width="100%"/>
+
+<b>Chú ý:</b>
+- Phải sử dụng đa luồng để get image, tạo base64 và gửi post request lưu ảnh vào server api Nodejs.
+- Khuyến khích sử dụng Retrofit để thực hiện post request và executor để thực hiện đa luồng.
+- Có thể đăng ký api key tại https://api.nasa.gov/ để sử dụng api của NASA.
+- Code cần có sự đầu tư chuẩn chỉnh về mặt UI/UX, code clean, comment code đầy đủ, sử dụng git để quản lý source code. Đạt đủ các tiêu chí trên sẽ được cộng điểm.
