@@ -52,6 +52,8 @@ Tài liệu tham khảo tại <a href="https://viblo.asia/p/su-dung-firebase-tro
  
 <h2>Lab 7: Tạo 2 ứng dụng android và sử dụng socket gửi thông từ app A sang app B, app B hiển thị thông báo dạng popup (toast,... ) </h2>
 
+<hr/>
+
 <h2>Assignment GĐ2: Hoàn thiện ứng dụng kéo dữ liệu Nasa theo mô hình <a href="./AssignmentHelper/assignmentGD2.jpg"> NÀY </a> </h2>
 
 <img src="./AssignmentHelper/assignmentGD2.jpg" alt="Assignment Diagram" width="100%"/>
